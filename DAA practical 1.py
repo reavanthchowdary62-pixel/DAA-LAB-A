@@ -163,3 +163,141 @@ Time Complexity:
 Execution Time: 0.00001370 seconds
 --------------------------------------------------
 """
+
+
+# ------------------------------------------------------------------------------
+# 4. INSERTION SORT
+# ------------------------------------------------------------------------------
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+    return arr
+
+
+# Execution & Demonstration for Insertion Sort
+arr_insertion = [64, 34, 25, 12, 22, 11, 90]
+print("--- 4. INSERTION SORT ---")
+print("Original Array:", arr_insertion)
+
+start_time = time.perf_counter()
+sorted_insertion = insertion_sort(arr_insertion.copy())
+end_time = time.perf_counter()
+
+print("Sorted Array  :", sorted_insertion)
+print("Time Complexity:")
+print("  Best Case   : O(n)")
+print("  Average Case: O(n^2)")
+print("  Worst Case  : O(n^2)")
+print(f"Execution Time: {end_time - start_time:.8f} seconds\n")
+
+"""
+OUTPUT FOR INSERTION SORT:
+--------------------------------------------------
+--- 4. INSERTION SORT ---
+Original Array: [64, 34, 25, 12, 22, 11, 90]
+Sorted Array  : [11, 12, 22, 25, 34, 64, 90]
+Time Complexity:
+  Best Case   : O(n)
+  Average Case: O(n^2)
+  Worst Case  : O(n^2)
+Execution Time: 0.00000xxxx seconds
+--------------------------------------------------
+"""
+
+
+# ------------------------------------------------------------------------------
+# 5. QUICK SORT (simple functional implementation)
+# ------------------------------------------------------------------------------
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+
+
+# Execution & Demonstration for Quick Sort
+arr_quick = [64, 34, 25, 12, 22, 11, 90]
+print("--- 5. QUICK SORT ---")
+print("Original Array:", arr_quick)
+
+start_time = time.perf_counter()
+sorted_quick = quick_sort(arr_quick.copy())
+end_time = time.perf_counter()
+
+print("Sorted Array  :", sorted_quick)
+print("Time Complexity:")
+print("  Best Case   : O(n log n)")
+print("  Average Case: O(n log n)")
+print("  Worst Case  : O(n^2)")
+print(f"Execution Time: {end_time - start_time:.8f} seconds\n")
+
+"""
+OUTPUT FOR QUICK SORT:
+--------------------------------------------------
+--- 5. QUICK SORT ---
+Original Array: [64, 34, 25, 12, 22, 11, 90]
+Sorted Array  : [11, 12, 22, 25, 34, 64, 90]
+Time Complexity:
+  Best Case   : O(n log n)
+  Average Case: O(n log n)
+  Worst Case  : O(n^2)
+Execution Time: 0.00000xxxx seconds
+--------------------------------------------------
+"""
+
+
+# -------------------------
+# Interactive user input
+# -------------------------
+def parse_list_input(s):
+    if not s:
+        return []
+    if ',' in s:
+        parts = [p.strip() for p in s.split(',') if p.strip()]
+    else:
+        parts = [p for p in s.split() if p]
+    converted = []
+    for p in parts:
+        try:
+            converted.append(int(p))
+        except ValueError:
+            converted.append(p)
+    return converted
+
+
+try:
+    ans = input('Run custom input for Insertion & Quick Sort? (y/n): ').strip().lower()
+except EOFError:
+    ans = 'n'
+
+if ans == 'y':
+    s = input('Enter list elements (comma or space separated): ').strip()
+    arr_custom = parse_list_input(s)
+    if not arr_custom:
+        print('Empty list provided; exiting custom run.')
+    else:
+        print('\nInsertion Sort on custom input:')
+        t0 = time.perf_counter()
+        res_ins = insertion_sort(arr_custom.copy())
+        t1 = time.perf_counter()
+        print('Result :', res_ins)
+        print('Comparisons: N/A (implementation-level)')
+        print('Time Complexity: Best O(n), Average O(n^2), Worst O(n^2)')
+        print(f'Execution Time: {t1 - t0:.9f} seconds\n')
+
+        print('Quick Sort on custom input:')
+        t0 = time.perf_counter()
+        res_qs = quick_sort(arr_custom.copy())
+        t1 = time.perf_counter()
+        print('Result :', res_qs)
+        print('Time Complexity: Best O(n log n), Average O(n log n), Worst O(n^2)')
+        print(f'Execution Time: {t1 - t0:.9f} seconds\n')
+
