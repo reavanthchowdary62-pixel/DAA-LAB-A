@@ -52,8 +52,7 @@ Conclusion
 
 The program demonstrates how Min-Heap and Max-Heap can be used to efficiently sort an array in ascending and descending order
 
-#practical 4
-Factorial Using Iterative and Recursive Function
+ Practical 4: Factorial Using Iterative and Recursive Function
 Description
 
 This Python program calculates the factorial of a non-negative integer using two methods:
