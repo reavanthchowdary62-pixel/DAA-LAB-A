@@ -3,7 +3,7 @@
 This practical implements Selection Sort, Bubble Sort, and Merge Sort, insertion sort, quick sort 
 Each algorithm includes implementation, time complexity analysis (best, worst, and average cases), and execution time measurement.
 
-# Practical 2: Linear Search
+# Practical 2: 
 
 This practical implements the Linear Search algorithm with interactive user input.
 It demonstrates:
@@ -52,13 +52,14 @@ Conclusion
 
 The program demonstrates how Min-Heap and Max-Heap can be used to efficiently sort an array in ascending and descending order
 
- # Practical 4: Factorial Using Iterative and Recursive Function
+ # Practical 4:
+ ##Factorial Using Iterative and Recursive Function
 Description
 
 This Python program calculates the factorial of a non-negative integer using two methods:
 
-Iterative method
-Recursive method
+###Iterative method
+###Recursive method
 
 It also compares the execution time and complexity of both methods.
 
