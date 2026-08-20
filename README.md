@@ -50,4 +50,51 @@ Python 3
 heapq and time modules (built-in)
 Conclusion
 
-The program demonstrates how Min-Heap and Max-Heap can be used to efficiently sort an array in ascending and descending order.
+The program demonstrates how Min-Heap and Max-Heap can be used to efficiently sort an array in ascending and descending order
+
+#practical 4
+Factorial Using Iterative and Recursive Function
+Description
+
+This Python program calculates the factorial of a non-negative integer using two methods:
+
+Iterative method
+Recursive method
+
+It also compares the execution time and complexity of both methods.
+
+Example
+
+Input:
+
+Enter a non-negative integer: 5
+
+
+Output:
+
+Number: 5
+
+Iterative Method:
+Factorial: 120
+Execution Time: 0.0000012000 seconds
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Recursive Method:
+Factorial: 120
+Execution Time: 0.0000015000 seconds
+Time Complexity: O(n)
+Space Complexity: O(n)
+
+Complexity
+Method	Time	Space
+Iterative	O(n)	O(1)
+Recursive	O(n)	O(n)
+Requirements
+Python 3.x
+Run
+python factorial.py
+
+Conclusion
+
+Both methods produce the same factorial result. The iterative method uses less memory, while the recursive method demonstrates the use of recursion.
