@@ -121,4 +121,61 @@ If the target amount can be formed, the program returns the minimum number of co
 * **Space Complexity:** O(amount)
 
 This project is useful for learning Dynamic Programming concepts, practicing algorithm design, and preparing for coding interviews.
+# Practical 5 
 
+## Aim
+
+To implement the **0/1 Knapsack Problem** using the **Dynamic Programming** technique and find the maximum value that can be obtained without exceeding the given knapsack capacity.
+
+---
+
+## Problem Statement
+
+The **0/1 Knapsack Problem** is an optimization problem where a set of items is given, and each item has:
+
+- A weight
+- A value
+
+The objective is to select items such that the **total value is maximum**, while the **total weight does not exceed the capacity of the knapsack**.
+
+Each item can be selected **only once**.
+
+---
+
+## Algorithm Used
+
+### Dynamic Programming
+
+A 2D DP table is used to solve the problem.
+
+`dp[i][w]` represents the maximum value that can be obtained using the first `i` items with a knapsack capacity of `w`.
+
+For every item, two choices are considered:
+
+1. **Include the item**
+2. **Exclude the item**
+
+The maximum value from these two choices is stored in the DP table.
+
+---
+
+## Input
+
+The program takes the following inputs from the user:
+
+- Number of items
+- Weight of each item
+- Value of each item
+- Maximum capacity of the knapsack
+
+---
+
+## Output
+
+The program displays:
+
+- Maximum value
+- Selected items
+- Execution time
+- Time complexity
+- Space complexity
