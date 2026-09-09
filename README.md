@@ -125,7 +125,7 @@ This project is useful for learning Dynamic Programming concepts, practicing alg
 
 ## Aim
 
-To implement the **0/1 Knapsack Problem** using the **Dynamic Programming** technique and find the maximum value that can be obtained without exceeding the given knapsack capacity.
+# To implement the **0/1 Knapsack Problem** using the **Dynamic Programming** technique and find the maximum value that can be obtained without exceeding the given knapsack capacity.
 
 ---
 
