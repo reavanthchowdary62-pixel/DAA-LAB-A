@@ -1,0 +1,86 @@
+import time
+
+def matrix_chain_order(p, n):
+    # m[i][j] stores the minimum number of scalar multiplications
+    # needed to multiply matrices Ai through Aj
+    m = [[0 for _ in range(n)] for _ in range(n)]
+
+    # length is the chain length
+    for length in range(2, n):
+        for i in range(1, n - length + 1):
+            j = i + length - 1
+            m[i][j] = float('inf')
+
+            for k in range(i, j):
+                cost = (
+                    m[i][k]
+                    + m[k + 1][j]
+                    + p[i - 1] * p[k] * p[j]
+                )
+
+                if cost < m[i][j]:
+                    m[i][j] = cost
+
+    return m[1][n - 1]
+
+
+# ---------------- USER INPUT ----------------
+
+num_matrices = int(input("Enter the number of matrices: "))
+
+dimensions = []
+
+print("\nEnter dimensions of matrices:")
+
+# First matrix dimensions
+rows = int(input("Enter rows of Matrix 1: "))
+cols = int(input("Enter columns of Matrix 1: "))
+
+dimensions.append(rows)
+dimensions.append(cols)
+
+# Remaining matrices
+for i in range(2, num_matrices + 1):
+    rows = dimensions[-1]
+
+    cols = int(input(
+        f"Enter columns of Matrix {i} "
+        f"(rows must be {rows}): "
+    ))
+
+    dimensions.append(cols)
+
+
+# ---------------- CALCULATION ----------------
+
+start_time = time.perf_counter()
+
+minimum_cost = matrix_chain_order(
+    dimensions,
+    num_matrices + 1
+)
+
+end_time = time.perf_counter()
+
+execution_time = end_time - start_time
+
+
+# ---------------- OUTPUT ----------------
+
+print("\n========== RESULT ==========")
+
+print("Matrix dimensions:", dimensions)
+
+print(
+    "Minimum number of scalar multiplications:",
+    minimum_cost
+)
+
+print(
+    "Execution time: {:.9f} seconds".format(
+        execution_time
+    )
+)
+
+print("\nTime Complexity: O(n^3)")
+print("Space Complexity: O(n^2)")
